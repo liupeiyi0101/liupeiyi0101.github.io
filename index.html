@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Peiyi Liu — M.S. student in Mathematics at UESTC. Research interests: mathematical foundations of machine learning, generative models, numerical analysis, and optimization.">
+  <meta name="description" content="Peiyi Liu — M.S. student in Mathematics at UESTC. Research interests include mathematical foundations of machine learning, generative models, numerical analysis, optimization, and scientific computing.">
   <title>Peiyi Liu | Mathematics & Machine Learning</title>
   <style>
     :root {
@@ -26,7 +26,7 @@
       font-size:16px;
       line-height:1.72;
     }
-    .wrap { max-width:980px; padding:0 28px; margin:auto; }
+    .wrap { max-width:1020px; padding:0 28px; margin:auto; }
     header {
       position:sticky;
       top:0;
@@ -49,18 +49,18 @@
       text-decoration:none;
       white-space:nowrap;
     }
-    nav { display:flex; flex-wrap:wrap; gap:18px; }
+    nav { display:flex; flex-wrap:wrap; gap:17px; }
     nav a {
-      font-size:.92rem;
+      font-size:.91rem;
       text-decoration:none;
       color:var(--muted);
     }
     a { color:var(--accent); }
     a:hover, nav a:hover { color:var(--accent-dark); text-decoration:underline; }
-    main { padding:62px 0 72px; }
+    main { padding:58px 0 72px; }
     h1 {
-      font-size:2.75rem;
-      line-height:1.15;
+      font-size:2.8rem;
+      line-height:1.14;
       margin:0 0 10px;
       letter-spacing:-.04em;
     }
@@ -82,11 +82,26 @@
       margin:0;
     }
     .hero {
-      padding-bottom:42px;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) 285px;
+      gap:44px;
+      align-items:center;
+      padding-bottom:44px;
       border-bottom:1px solid var(--line);
     }
-    .hero p { max-width:810px; }
+    .hero-copy p { max-width:720px; }
     .hero .lead { font-size:1.04rem; margin-top:18px; }
+    .profile-photo {
+      width:100%;
+      aspect-ratio:4 / 5;
+      object-fit:cover;
+      object-position:50% 42%;
+      border:1px solid var(--line);
+      border-radius:14px;
+      box-shadow:0 12px 30px rgba(23,36,58,.10);
+      background:var(--soft);
+      display:block;
+    }
     .links {
       display:flex;
       gap:18px;
@@ -117,28 +132,28 @@
       margin-right:6px;
       margin-top:7px;
     }
-    .project-grid {
+    .project-grid, .interest-grid {
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:18px;
       margin-top:16px;
     }
-    .project {
+    .project, .interest-card {
       border:1px solid var(--line);
       border-radius:12px;
       padding:20px;
       background:var(--soft);
     }
-    .project p:last-child { margin-bottom:0; }
+    .project p:last-child, .interest-card p:last-child { margin-bottom:0; }
     .project-links { margin-top:13px; font-size:.92rem; }
     .project-links a { text-decoration:none; }
-    .skills {
+    .skills, .interest-tags {
       display:flex;
       flex-wrap:wrap;
       gap:8px;
       margin-top:10px;
     }
-    .skill {
+    .skill, .interest-tag {
       border:1px solid var(--line);
       border-radius:999px;
       padding:4px 10px;
@@ -158,12 +173,14 @@
       color:var(--muted);
       font-size:.85rem;
     }
-    @media (max-width:680px) {
+    @media (max-width:760px) {
       .bar { align-items:flex-start; flex-direction:column; padding:16px 0; gap:8px; }
       nav { gap:12px; }
-      main { padding-top:42px; }
+      main { padding-top:38px; }
       h1 { font-size:2.18rem; }
-      .project-grid { grid-template-columns:1fr; }
+      .hero { grid-template-columns:1fr; gap:28px; }
+      .profile-photo { width:min(320px,100%); margin:0 auto; aspect-ratio:4/5; }
+      .project-grid, .interest-grid { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -177,6 +194,7 @@
         <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
         <a href="#activities">Activities</a>
+        <a href="#beyond">Beyond Research</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -184,17 +202,22 @@
 
   <main class="wrap" id="home">
     <div class="hero">
-      <h1>Peiyi Liu</h1>
-      <p class="subtitle">M.S. Student in Mathematics · University of Electronic Science and Technology of China (UESTC)</p>
-      <p class="lead">
-        I am interested in the mathematical foundations of machine learning, with a particular focus on
-        generative models, diffusion sampling, numerical analysis, and optimization. My research aims to connect
-        rigorous mathematical analysis with efficient computational algorithms.
-      </p>
-      <div class="links">
-        <a href="https://github.com/liupeiyi0101" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <a href="https://arxiv.org/abs/2601.17375" target="_blank" rel="noopener noreferrer">arXiv ↗</a>
-        <a href="mailto:peiyiliu@std.uestc.edu.cn">Email ↗</a>
+      <div class="hero-copy">
+        <h1>Peiyi Liu</h1>
+        <p class="subtitle">M.S. Student in Mathematics · University of Electronic Science and Technology of China (UESTC)</p>
+        <p class="lead">
+          I am interested in the mathematical foundations of machine learning, with a particular focus on
+          generative models, diffusion sampling, numerical analysis, and optimization. My research aims to connect
+          rigorous mathematical analysis with efficient computational algorithms.
+        </p>
+        <div class="links">
+          <a href="https://github.com/liupeiyi0101" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://arxiv.org/abs/2601.17375" target="_blank" rel="noopener noreferrer">arXiv ↗</a>
+          <a href="mailto:peiyiliu@std.uestc.edu.cn">Email ↗</a>
+        </div>
+      </div>
+      <div>
+        <img class="profile-photo" src="profile-photo.jpg" alt="Peiyi Liu">
       </div>
     </div>
 
@@ -206,8 +229,8 @@
         methods for diffusion-based models.
       </p>
       <p>
-        Beyond theoretical research, I also develop interactive software projects and enjoy translating
-        mathematical and algorithmic ideas into complete computational systems.
+        Beyond theoretical research, I enjoy building interactive software and translating mathematical and
+        algorithmic ideas into complete computational systems.
       </p>
     </section>
 
@@ -278,30 +301,35 @@
         <div class="project">
           <h3>Robot Battle — Card & Mecha Strategy Game</h3>
           <p>
-            A browser-based strategy-game project combining card mechanics, tactical unit deployment,
-            and mecha-themed gameplay.
+            A browser-based multiplayer game prototype featuring room-based multiplayer flow, pilot and mecha
+            selection, card combat, maps, and structured game data. The project includes a Node.js game server,
+            front-end assets, and persistent local match state.
           </p>
           <div>
-            <span class="tag">Personal Project</span>
-            <span class="tag">In Development</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Multiplayer Systems</span>
           </div>
-          <p class="note">Repository content is being prepared for public release.</p>
+          <p class="project-links">
+            <a href="https://github.com/liupeiyi0101/robot-battle" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a>
+          </p>
         </div>
       </div>
     </section>
 
     <section id="activities">
-      <h2>Academic Activities</h2>
+      <h2>Selected Academic Activities</h2>
       <div class="item">
         <h3>NUS Summer School 2026</h3>
         <p class="meta">Mathematical Aspects of Data Science</p>
       </div>
       <div class="item">
-        <h3>Conferences, Workshops & Seminars</h3>
-        <p>
-          Participated in academic activities in applied mathematics, machine learning, numerical analysis,
-          and related areas.
-        </p>
+        <h3>ICAM 2026</h3>
+        <p>Attended academic talks in applied mathematics and discussed the development of physics-informed neural networks with Prof. George Em Karniadakis.</p>
+      </div>
+      <div class="item">
+        <h3>Machine Learning Theory Seminar · Tsinghua University</h3>
+        <p>Participated in a research seminar and discussed mathematical questions related to large language models with Prof. Mikhail Belkin.</p>
       </div>
     </section>
 
@@ -312,8 +340,39 @@
         <span class="skill">MATLAB</span>
         <span class="skill">LaTeX</span>
         <span class="skill">TypeScript</span>
+        <span class="skill">JavaScript / Node.js</span>
         <span class="skill">Numerical Computing</span>
-        <span class="skill">Scientific Writing</span>
+      </div>
+    </section>
+
+    <section id="beyond">
+      <h2>Beyond Research</h2>
+      <p>
+        Outside mathematics and research, I enjoy activities that combine energy, competition, strategy, and
+        communication.
+      </p>
+      <div class="interest-grid">
+        <div class="interest-card">
+          <h3>Sports</h3>
+          <p>I enjoy a wide range of sports and regularly spend my free time staying active.</p>
+          <div class="interest-tags">
+            <span class="interest-tag">Basketball</span>
+            <span class="interest-tag">Tennis</span>
+            <span class="interest-tag">Swimming</span>
+          </div>
+        </div>
+        <div class="interest-card">
+          <h3>Board & Social Deduction Games</h3>
+          <p>
+            I enjoy games that reward logical reasoning, communication, information analysis, and strategic
+            decision-making.
+          </p>
+          <div class="interest-tags">
+            <span class="interest-tag">Werewolf</span>
+            <span class="interest-tag">Blood on the Clocktower</span>
+            <span class="interest-tag">Board Games</span>
+          </div>
+        </div>
       </div>
     </section>
 
